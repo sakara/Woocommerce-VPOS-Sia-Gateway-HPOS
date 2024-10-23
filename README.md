@@ -1,1 +1,1 @@
-# Woocommerce-VPOS-Sia-Gateway-HPOS
+woocommerce-vpossia-payment-gateway
