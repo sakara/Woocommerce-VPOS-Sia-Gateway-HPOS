@@ -19,6 +19,12 @@ if (!defined('ABSPATH')) {
 // Make sure WooCommerce is active
 if (!in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) return;
 
+add_action( 'before_woocommerce_init', function() {
+    if ( class_exists( \Automattic\WooCommerce\Utilities\OrderUtil::class ) ) {
+        \Automattic\WooCommerce\Utilities\OrderUtil::declare_compatibility( 'vposiaspa-payment-gateway', __FILE__ );
+    }
+});
+
 /**
  * Initialize the gateway.
  *
